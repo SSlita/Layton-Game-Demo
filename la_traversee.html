@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="la_traversee.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="enigme.js" defer></script>
+    <script type="module" src="UDTQ.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <audio id="musicSong" src="The Village Awakens.mp3"></audio>
+    <audio id="transitionSong" src="transition.mp3"></audio>
+    <audio src="puzzle_song.mp3" id="puzzleSong"></audio>
+
+    <header class="header-banner">
+        <div class="header-content">
+            <h1 id="countdown"></h1>
+            <p id="pseudoDisplay"></p>
+        </div>
+    </header>
+
+    <div class="image-container">
+        <img src="room1.png" alt="" draggable="false">
+        <div class="click-zone tour" onclick="clickEnigme(event)"></div>
+        <div class="click-zone porte" onclick="showDialogue('lockDoor')"></div>
+        <div class="click-zone strangeTower" onclick="showDialogue('strangeTower')"></div>
+        <div class="click-zone horloge" onclick="showDialogue('clockTower')"></div>
+    </div>
+
+    <img id="dialogueBox" class="hidden" alt="Dialogue">
+
+    <div id="exclamationMark">!</div>
+
+    <!-- Écran de transition Layton -->
+    <div class="transition-screen" id="transitionScreen"></div>
+
+    <div id="enigmeBox" class="hidden">
+        <img src="UDTQ.png" alt="" draggable="false">
+
+        <form id="formContainer">
+            <input type="text" id="answer" placeholder="Votre réponse..." required>
+            <button type="submit" id="sendBtn">Envoyez</button>
+        </form>
+
+        <div id="helpButton" onclick="toggleHelp()">?</div>
+
+        <div id="indiceButton" onclick="togglePopIndice()">!</div>
+
+        <div id="helpPopup" class="hidden">
+            <div class="help-content">
+                <h2>Enoncé de l'énigme</h2>
+                <p>
+                    Eh bien, on dirait que quelqu'un a encore écrit n'importe quoi sur le tableau ! <br>
+                    <br>
+                    Et pourtant, il est certaines conditions dans lesquelles ces équations sont correctes. <br>
+                    <br>
+                    Huit moins six est égal à deux. <br>
+                    Huit plus six est aussi égal à deux. <br>
+                    <br>
+                    En supposant que ces deux équations sont correctes, à combien est égal sept plus six ?    
+                </p>
+                <button onclick="toggleHelp()">Fermer</button>
+            </div>
+        </div>
+
+        <div id="indicePopup" class="hidden">
+            <div class="indice-popup-wrapper">
+                <img src="indicePopup.png" alt="" draggable="false">
+                <div class="click-zone yes" onclick="showIndice()"></div>
+                <div class="click-zone no" onclick="closeIndice()"></div>
+            </div>
+        </div>        
+
+        <div id="indice" class="hidden">
+            Au premier coup d'œil, il semble que l'auteur de ces équations n'y connaisse rien en maths. 
+            Mais en réalité, tout le monde compte de cette manière. <br>
+            <br>
+            D'ailleurs, il vous arrive probablement de la faire tous les jours.
+        </div>
+    </div>
+
+    <div class="victory-screen-1" id="victoryScreen1"></div>
+    <div class="victory-screen-2" id="victoryScreen2"></div>
+    <div class="victory-screen-3" id="victoryScreen3"></div>
+    <div class="victory-screen-4" id="victoryScreen4"></div>
+    <div class="victory-screen-5" id="victoryScreen5"></div>
+</body>
+</html>

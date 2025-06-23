@@ -1,0 +1,337 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0e5b2;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.header-banner {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+#pseudoDisplay {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ZONE CLICK */
+.click-zone {
+    position: absolute;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.2); /* à retirer dans le futur */
+    border-radius: 8px;
+}
+
+#exclamationMark {
+    position: absolute;
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+    display: none;
+    z-index: 10;
+    animation: pop 0.6s ease-out;
+    pointer-events: none;
+}
+  
+@keyframes pop {
+    0% {
+        transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+}
+
+/* DIALOGUE */
+#dialogueBox {
+    display: block;
+    margin: 20px auto 0 auto;
+    max-width: 70%;
+    padding: 15px 20px;
+}
+
+#dialogueBox.hidden {
+    display: none;
+}
+
+/* TRANSITION SCREEN */
+.transition-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    /*background-image: url('../img/transitionScreen.png');*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 1s;
+}
+
+.transition-screen.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+/* ENIGME RESOLUE */
+.victory-screen-1,
+.victory-screen-2,
+.victory-screen-3,
+.victory-screen-4,
+.victory-screen-5 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1000;
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.victory-screen-1 { background-image: url("puzzleSolve_1.png"); }
+.victory-screen-2 { background-image: url("puzzleSolve_2.png"); }
+.victory-screen-3 { background-image: url("puzzleSolve_3.png"); }
+.victory-screen-4 { background-image: url("puzzleSolve_4.png"); }
+.victory-screen-5 { background-image: url("puzzleSolve_5.png"); }
+
+
+.transition-screen.active,
+.victory-screen-1.active,
+.victory-screen-2.active,
+.victory-screen-3.active,
+.victory-screen-4.active,
+.victory-screen-5.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.victory-background {
+    background-color: black !important;
+    transition: background-color 0.5s ease;
+}
+
+/* TEMPS ECOULE */
+.defeat-screen-1,
+.defeat-screen-2,
+.defeat-screen-3,
+.defeat-screen-4,
+.defeat-screen-5 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1000;
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.defeat-screen-1 { background-image: url("../img/puzzleSolve_1.png"); }
+.defeat-screen-2 { background-image: url("../img/puzzleSolve_2.png"); }
+.defeat-screen-3 { background-image: url("../img/defeat_1.png"); }
+.defeat-screen-4 { background-image: url("../img/defeat_2.png"); }
+.defeat-screen-5 { background-image: url("../img/defeat_3.png"); }
+
+
+.transition-screen.active,
+.defeat-screen-1.active,
+.defeat-screen-2.active,
+.defeat-screen-3.active,
+.defeat-screen-4.active,
+.defeat-screen-5.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.defeat-background {
+    background-color: black !important;
+    transition: background-color 0.5s ease;
+}
+
+/* INDICE */
+#indiceButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+#indicePopup.hidden {
+    display: none;
+}
+
+.indice-popup-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.indice-popup-wrapper img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.click-zone.yes {
+    position: absolute;
+    left: 35%; 
+    bottom: 20%;
+    width: 25%; 
+    height: 10%; 
+    transform: translateX(-50%);
+}
+
+.click-zone.no {
+    position: absolute;
+    right: 35%;
+    bottom: 20%; 
+    width: 25%;
+    height: 10%;
+    transform: translateX(50%);
+}
+
+#indice {
+    margin-top: 20px; /* espace au-dessus du bloc */
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    z-index: 500;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/* HELP */ 
+#helpButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+#helpPopup {
+    position: fixed;
+    text-align: left;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+
+#helpPopup.hidden {
+    display: none;
+}
+
+.help-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.help-content button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.flash-red {
+    animation: redFlash 0.3s ease-in-out;
+}
+
+@keyframes redFlash {
+    0% {
+        background-color: rgba(255, 0, 0, 0.5); 
+    }
+    50% {
+        background-color: rgba(255, 0, 0, 0.8); 
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}

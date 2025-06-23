@@ -1,0 +1,95 @@
+.transition-screen {
+    background-image: url('transitionScreen.png');
+}
+
+/* ZONE CLICK */
+.tour {
+    left: 260px;
+    width: 75px;
+    height: 100px;
+    bottom: 50px;
+}
+
+.porte {
+    left: 80px;
+    width: 50px;
+    height: 80px;
+    bottom: 50px;
+}
+
+.horloge {
+    left: 260px;
+    width: 75px;
+    height: 80px;
+    bottom: 330px;
+}
+
+.strangeTower {
+    left: 360px;
+    width: 75px;
+    height: 200px;
+    bottom: 330px;
+}
+
+/* ENIGME */
+.river {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+}
+
+.bank {
+    width: 30%;
+    min-height: 200px;
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #a5d6a7;
+}
+
+.raft {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: 2px dashed #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe082;
+    cursor: pointer;
+}
+
+.animal {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 24px;
+}
+
+.raft-zone {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#victoryMessage {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: green;
+    font-weight: bold;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
