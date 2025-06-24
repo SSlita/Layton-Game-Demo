@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="la_traversee.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="enigme.js" defer></script>
     <script type="module" src="UDTQ.js"></script>
@@ -12,7 +12,7 @@
 <body>
     <audio id="musicSong" src="The Village Awakens.mp3"></audio>
     <audio id="transitionSong" src="transition.mp3"></audio>
-    <audio src="puzzle_song.mp3" id="puzzleSong"></audio>
+    <audio src="Puzzles Abound.mp3" id="puzzleSong"></audio>
 
     <header class="header-banner">
         <div class="header-content">
@@ -52,14 +52,11 @@
             <div class="help-content">
                 <h2>Enoncé de l'énigme</h2>
                 <p>
-                    Eh bien, on dirait que quelqu'un a encore écrit n'importe quoi sur le tableau ! <br>
+                    Voici un petit bout de papiers avec des cases. <br>
                     <br>
-                    Et pourtant, il est certaines conditions dans lesquelles ces équations sont correctes. <br>
+                    Sur chaque case est représenté des lettres, mais il manque une lettre. <br>
                     <br>
-                    Huit moins six est égal à deux. <br>
-                    Huit plus six est aussi égal à deux. <br>
-                    <br>
-                    En supposant que ces deux équations sont correctes, à combien est égal sept plus six ?    
+                    Quelle lettre peut-on mettre à la place de la case vide.    
                 </p>
                 <button onclick="toggleHelp()">Fermer</button>
             </div>
@@ -74,10 +71,9 @@
         </div>        
 
         <div id="indice" class="hidden">
-            Au premier coup d'œil, il semble que l'auteur de ces équations n'y connaisse rien en maths. 
-            Mais en réalité, tout le monde compte de cette manière. <br>
+            Si au premier coup d'oeil, vous pensez que chaque lettre représente une sorte de série, vous êtes sur la bonne voie. <br>
             <br>
-            D'ailleurs, il vous arrive probablement de la faire tous les jours.
+            Reste à savoir de quel genre de série cela peut représenté ?
         </div>
     </div>
 
